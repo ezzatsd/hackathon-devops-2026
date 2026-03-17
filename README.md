@@ -41,6 +41,8 @@ Une fois le socle stable, on ajoutera :
 - detection de la stack par IA
 - generation automatique des artefacts de deploiement
 
+Un premier prototype de cette analyse est maintenant prepare dans `scripts/analyze_repo.py`.
+
 ### Etape C - Viser le Palier 3
 
 Si le temps le permet, on ajoutera l'auto-instrumentation sans modifier le code source.
@@ -95,3 +97,18 @@ A chaque etape, on gardera toujours ce schema mental :
 
 La prochaine etape concrete est d'ecrire l'architecture cible et la roadmap du MVP.
 Ensuite, on commencera la partie implementation en creant la structure Terraform et les premiers fichiers de configuration.
+
+## 7. Etat actuel du projet
+
+Ce qui est deja pret :
+
+- le socle Terraform
+- l'application Node.js de reference
+- les manifests Kubernetes
+- la configuration OpenTelemetry
+- un prototype de bonus IA pour analyser un depot Git
+
+Ce qui reste bloque principalement :
+
+- la creation du cluster AKS a cause des quotas et tailles de VM autorisees par la souscription Azure
+- le push de l'image dans ACR a cause des restrictions de build local et ACR Tasks
