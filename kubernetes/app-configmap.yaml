@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: node-app-config
+  namespace: platform-demo
+data:
+  PORT: "3000"
+  DB_HOST: postgres.platform-demo.svc.cluster.local
+  DB_PORT: "5432"
+  DB_NAME: appdb
+  DB_USER: postgres
+  OTEL_SERVICE_NAME: hackathon-node-app
+  OTEL_EXPORTER_OTLP_ENDPOINT: http://otel-collector.observability.svc.cluster.local:4318/v1/traces
